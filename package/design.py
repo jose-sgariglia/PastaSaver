@@ -36,10 +36,14 @@ def get_cook_order(pasta_saver):
         print("Pasta da cucinare:")
         for weight, pasta in order:
             print(f"\tPasta: {pasta.name}, Peso: {weight}, Tempo di cottura: {pasta.minutes_cook} minuti")
+
+        print("\nPasta nella dispensa")
+        for weight, pasta in pasta_saver.food_storage:
+            print(f"\tPasta: {pasta.name}, Peso: {weight}")
         input()
         return order
     except ValueError:
-        print("!! Hai pocha pasta !!")
+        print("!! Non hai abbastanza pasta !!")
         return None
 
 

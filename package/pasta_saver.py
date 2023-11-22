@@ -8,6 +8,10 @@ class PastaSaver:
         self._collection = []
 
     @property
+    def food_storage(self):
+        return self._collection
+
+    @property
     def total_weight(self):
         return sum([w for w, x in self._collection])
 
@@ -45,9 +49,3 @@ class PastaSaver:
             self.add_Pasta(copy_pasta, excessive_pasta)
 
         return sorted(pasta_list, key=lambda x: x[1].minutes_cook, reverse=True)
-
-    def __str__(self):
-        output = "Pasta Saver"
-        for weight, pasta in self._collection:
-            output += f"\n\tPasta: {pasta.name}, Weight: {weight}"
-        return output

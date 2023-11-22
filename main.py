@@ -24,11 +24,12 @@ def main():
                 print("---- Cottura -----")
                 timer(pasta_to_use)
             case 3:
+                os.system('clear')
                 break
             case _:
                 print("Opzione non valida, riprova")
 
-        sleep(1)
+        sleep(2)
 
 
 if __name__ == '__main__':
