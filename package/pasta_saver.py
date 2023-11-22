@@ -25,7 +25,7 @@ class PastaSaver:
 
     def get_order_cook(self, qty: int) -> []:
         if not self.__check_pasta_quantity(qty):
-            raise Exception("These isn't enough pasta")
+            raise ValueError("These isn't enough pasta")
 
         sum_weight = 0
         pasta_list = []

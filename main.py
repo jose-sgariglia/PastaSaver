@@ -1,27 +1,35 @@
-from package.pasta import Pasta
 from package.pasta_saver import PastaSaver
-from package.pasta_timer import PastaTimer
+from package.design import BANNER, display_menu, add_new_pasta, get_cook_order, timer
+from time import sleep
+import os
+
+
+def main():
+    pasta_saver = PastaSaver()
+    pasta_to_use = None
+
+    while True:
+        os.system('clear')
+        print(BANNER)
+        option = display_menu()
+
+        match option:
+            case 0:
+                add_new_pasta(pasta_saver)
+                print("Pasta inserita con successo!")
+            case 1:
+                print("----- Preparazione -----")
+                pasta_to_use = get_cook_order(pasta_saver)
+            case 2:
+                print("---- Cottura -----")
+                timer(pasta_to_use)
+            case 3:
+                break
+            case _:
+                print("Opzione non valida, riprova")
+
+        sleep(1)
 
 
 if __name__ == '__main__':
-    pasta_saver = PastaSaver()
-
-    pasta_saver.add_Pasta(Pasta("Bucatini", 10), 40)
-    pasta_saver.add_Pasta(Pasta("Penne", 15), 120)
-    pasta_saver.add_Pasta(Pasta("Spaghetti", 5), 80)
-    pasta_saver.add_Pasta(Pasta("Farfalle", 20), 20)
-    pasta_saver.add_Pasta(Pasta("Ditalini", 15), 70)
-
-    # print(f"Total Weight: {pasta_saver.total_weight}")
-    # print(pasta_saver, '\n')
-    #
-    # print('Order of cooking')
-    # for w, x in pasta_saver.get_order_cook(300):
-    #     print(f"Minute: {x.minutes_cook}\t {x.name} - {w} g")
-    #
-    # print(f"\nTotal Pasta: {pasta_saver.total_weight}")
-    # print(pasta_saver)
-
-    pasta_timer = PastaTimer(pasta_saver.get_order_cook(300))
-
-    pasta_timer.timer()
+    main()

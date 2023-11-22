@@ -12,8 +12,7 @@ class Pasta(Observer):
 
         if self.minutes_cook == info:
             print(f"Pasta da calare: {self.name}")
-
-
+        pass
 
     def __str__(self):
         return f"({self.name}, {self.minutes_cook})"
