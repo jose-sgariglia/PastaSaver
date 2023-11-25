@@ -11,7 +11,7 @@ class Pasta(Observer):
             raise ValueError
 
         if self.minutes_cook == info:
-            print(f"Pasta da calare: {self.name}")
+            print(f"\t\aCalare: {self.name}")
         pass
 
     def __str__(self):

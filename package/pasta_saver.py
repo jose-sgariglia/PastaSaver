@@ -33,9 +33,7 @@ class PastaSaver:
 
         sum_weight = 0
         pasta_list = []
-        while sum_weight <= qty:
-            # pasta: Pasta
-
+        while sum_weight < qty:
             weight, pasta = self._collection.pop(0)
             sum_weight += weight
             pasta_list.append((weight, pasta))

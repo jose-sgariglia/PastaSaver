@@ -33,13 +33,14 @@ def get_cook_order(pasta_saver):
     try:
         qty = int(input("Inserisci la quantità di pasta desiderata (in grammi): "))
         order = pasta_saver.get_order_cook(qty)
-        print("Pasta da cucinare:")
-        for weight, pasta in order:
-            print(f"\tPasta: {pasta.name}, Peso: {weight}, Tempo di cottura: {pasta.minutes_cook} minuti")
+        print("Pasta da cucinare ordinata:")
+        for index, item in enumerate(order):
+            weight, pasta = item
+            print(f"\t({index + 1}) Pasta: {pasta.name}, Peso: {weight}g, Tempo di cottura: {pasta.minutes_cook} minuti")
 
         print("\nPasta nella dispensa")
         for weight, pasta in pasta_saver.food_storage:
-            print(f"\tPasta: {pasta.name}, Peso: {weight}")
+            print(f"\t- Pasta: {pasta.name}, Peso: {weight}g")
         input()
         return order
     except ValueError:

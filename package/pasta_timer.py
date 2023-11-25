@@ -13,11 +13,8 @@ class PastaTimer(Observed):
     def timer(self):
         start_timer = time()
 
-        print("Timer Start")
-        while int(time() - start_timer) <= self.__max_time:
-            cooking_time = int(self.__max_time - (time() - start_timer)) + 1
-            print(f"----------- Minute {cooking_time} ------------------")
+        while int(time() - start_timer) + 1 <= self.__max_time * 60:
+            cooking_time = self.__max_time - int((time() - start_timer) / 60)
+            print(f"\n# Minute {cooking_time} #")
             self._notify(cooking_time)
-            sleep(1)
-
-        print("Timer End")
+            sleep(60)
