@@ -1,5 +1,5 @@
-from package.pasta_saver import PastaSaver
-from package.design import BANNER, display_menu, add_new_pasta, get_cook_order, timer
+from pasta_saver.pasta_saver import PastaSaver
+from pasta_saver.design import BANNER, display_menu, add_new_pasta, get_cook_order, timer
 from time import sleep
 import os
 

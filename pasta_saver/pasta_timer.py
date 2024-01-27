@@ -1,7 +1,6 @@
 from .observer_pattern.observed import Observed
 from time import time, sleep
 
-
 class PastaTimer(Observed):
 
     def __init__(self, pasta_to_cook: list):
